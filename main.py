@@ -40,6 +40,9 @@ def load_data_and_labels():
     return data, label
 
 def main():
+    if not os.path.isdir(EXTRACT_PATH):
+        unzip_content()
+        
     print("Loading and normalizing data...")
     data, label = load_data_and_labels()
     print("Data loaded successfully!")
