@@ -3,6 +3,9 @@ import cv2
 import numpy as np
 import zipfile
 from sklearn.model_selection import train_test_split
+import tensorflow as tf
+from tensorflow import keras
+from tensorflow.keras import layers
 
 
 EXTRACT_PATH = "./content/cats_dogs"
@@ -46,7 +49,10 @@ def main():
     print("Splitting data...")
     x_train, x_test, y_train, y_test = train_test_split(data, label, test_size=0.2, random_state=42)
     print("Successfully split data")
+
+    print("Using TensorFlow version:", tf.__version__)
     
 
 if __name__ == "__main__":
+    print("Starting main...")
     main()
